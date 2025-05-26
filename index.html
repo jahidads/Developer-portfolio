@@ -147,6 +147,16 @@
         padding: 10px 20px;
       }
     }
+
+    .background-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
   </style>
 </head>
 
@@ -174,6 +184,10 @@
 </nav>
 
 <section id="home" class="hero">
+  <video autoplay loop muted playsinline class="background-video">
+    <source src="https://cdn.pixabay.com/video/2025/05/26/281781_tiny.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
   <h1 data-aos="fade-up">I'm Jahid Hasan</h1>
   <p data-aos="fade-up" data-aos-delay="300">Web Developer | Designer | Dreamer</p>
   <div class="social-icons mt-3" data-aos="fade-up" data-aos-delay="500">
@@ -183,65 +197,212 @@
   </div>
 </section>
 
+<style>
+  .hero {
+    height: 90vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 2px 2px 4px #000;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+
+  .hero h1, .hero p, .hero .social-icons {
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .hero p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+  }
+
+  .social-icons a {
+    color: white;
+    margin: 0 15px;
+    font-size: 2rem;
+    transition: transform 0.3s, color 0.3s;
+  }
+
+  .social-icons a:hover {
+    transform: scale(1.2);
+    color: #ffd700;
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+    }
+    .social-icons a {
+      font-size: 1.8rem;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .hero h1 {
+      font-size: 2rem;
+    }
+    .hero p {
+      font-size: 1rem;
+    }
+    .social-icons a {
+      font-size: 1.5rem;
+    }
+  }
+</style>
+
 <section id="portfolio" class="container py-5">
   <h2 class="text-center mb-5" data-aos="fade-up">My Projects</h2>
-  <div class="row g-4">
-    <div class="col-md-2" data-aos="zoom-in">
-      <div class="card shadow">
-        <img src="https://static.vecteezy.com/system/resources/thumbnails/034/960/488/small/vip-icon-for-graphic-design-logo-website-social-media-mobile-app-ui-png.png" class="card-img-top" alt="Project 1">
+  <div class="row g-4 justify-content-center">
+    <div class="col-md-4 col-sm-6 mb-4" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card shadow h-100 border-0 portfolio-card">
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/034/960/488/small/vip-icon-for-graphic-design-logo-website-social-media-mobile-app-ui-png.png" class="card-img-top portfolio-img" alt="Project 1">
         <div class="card-body text-center">
           <h5 class="card-title">Traditional-website</h5>
           <a href="https://jahidads.github.io/my-traditional-website/" class="btn btn-primary" target="_blank">View Project</a>
         </div>
       </div>
     </div>
-    <div class="col-md-2" data-aos="zoom-in" data-aos-delay="200">
-      <div class="card shadow">
-        <img src="https://static.vecteezy.com/system/resources/thumbnails/038/049/920/small/ai-generated-ninja-art-illustrations-for-stickers-logo-tshirt-design-poster-etc-png.png" class="card-img-top" alt="Project 2">
+    <div class="col-md-4 col-sm-6 mb-4" data-aos="zoom-in" data-aos-delay="150">
+      <div class="card shadow h-100 border-0 portfolio-card">
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/038/049/920/small/ai-generated-ninja-art-illustrations-for-stickers-logo-tshirt-design-poster-etc-png.png" class="card-img-top portfolio-img" alt="Project 2">
         <div class="card-body text-center">
-          <h5 class="card-title">Developer Portfolio </h5>
+          <h5 class="card-title">Developer Portfolio</h5>
           <a href="#" class="btn btn-primary" target="_blank">View Project</a>
         </div>
       </div>
     </div>
-    <div class="col-md-2" data-aos="zoom-in" data-aos-delay="400">
-      <div class="card shadow">
-        <img src="https://static.vecteezy.com/system/resources/thumbnails/036/895/728/small/hacker-logo-or-hacker-in-black-hoodie-cyber-crime-with-laptop-free-png.png" class="card-img-top" alt="Project 3">
+    <div class="col-md-4 col-sm-6 mb-4" data-aos="zoom-in" data-aos-delay="200">
+      <div class="card shadow h-100 border-0 portfolio-card">
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/036/895/728/small/hacker-logo-or-hacker-in-black-hoodie-cyber-crime-with-laptop-free-png.png" class="card-img-top portfolio-img" alt="Project 3">
         <div class="card-body text-center">
           <h5 class="card-title">CyberSecPro</h5>
           <a href="https://jahidads.github.io/Cyber-Security/#" class="btn btn-primary" target="_blank">View Project</a>
         </div>
       </div>
     </div>
-    <div class="col-md-2" data-aos="zoom-in" data-aos-delay="400">
-        <div class="card shadow">
-          <img src="https://static.vecteezy.com/system/resources/thumbnails/022/418/064/small/project-task-management-and-effective-time-planning-tools-project-development-icon-3d-vector-illustration-png.png" class="card-img-top" alt="Project 3">
-          <div class="card-body text-center">
-            <h5 class="card-title">Business-portfolio</h5>
-            <a href="https://jahidads.github.io/business-portfolio/#" class="btn btn-primary" target="_blank">View Project</a>
-          </div>
+    <div class="col-md-4 col-sm-6 mb-4" data-aos="zoom-in" data-aos-delay="250">
+      <div class="card shadow h-100 border-0 portfolio-card">
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/022/418/064/small/project-task-management-and-effective-time-planning-tools-project-development-icon-3d-vector-illustration-png.png" class="card-img-top portfolio-img" alt="Project 4">
+        <div class="card-body text-center">
+          <h5 class="card-title">Business-portfolio</h5>
+          <a href="https://jahidads.github.io/business-portfolio/#" class="btn btn-primary" target="_blank">View Project</a>
         </div>
       </div>
-      <div class="col-md-2" data-aos="zoom-in" data-aos-delay="400">
-        <div class="card shadow">
-          <img src="https://scontent.fdac174-1.fna.fbcdn.net/v/t39.30808-1/495563656_122107947614855440_1152109947886773901_n.jpg?stp=c0.0.1542.1542a_dst-jpg_s200x200_tt6&_nc_cat=106&ccb=1-7&_nc_sid=1d2534&_nc_ohc=fShzMFoc9Z4Q7kNvwEDfVCl&_nc_oc=AdluVD8yY5pPqSZDGYOwei5buXl1-Y4q0895JLG83cmZUZoXmIPovfuxGAO4OE7f_KI&_nc_zt=24&_nc_ht=scontent.fdac174-1.fna&_nc_gid=rjjOj_kT50l3kdEB2G9gHw&oh=00_AfIRM-U1FLegiBEUAA100UQHOuO3vLvBI3vXwOMMH61PhA&oe=68370799" class="card-img-top" alt="Project 3">
-          <div class="card-body text-center">
-            <h5 class="card-title">My Portfolio</h5>
-            <a href="https://jahidads.github.io/my-portfolio/" class="btn btn-primary" target="_blank">View Project</a>
-          </div>
+    </div>
+    <div class="col-md-4 col-sm-6 mb-4" data-aos="zoom-in" data-aos-delay="300">
+      <div class="card shadow h-100 border-0 portfolio-card">
+        <img src="https://scontent.fdac174-1.fna.fbcdn.net/v/t39.30808-1/495563656_122107947614855440_1152109947886773901_n.jpg?stp=c0.0.1542.1542a_dst-jpg_s200x200_tt6&_nc_cat=106&ccb=1-7&_nc_sid=1d2534&_nc_ohc=fShzMFoc9Z4Q7kNvwEDfVCl&_nc_oc=AdluVD8yY5pPqSZDGYOwei5buXl1-Y4q0895JLG83cmZUZoXmIPovfuxGAO4OE7f_KI&_nc_zt=24&_nc_ht=scontent.fdac174-1.fna&_nc_gid=rjjOj_kT50l3kdEB2G9gHw&oh=00_AfIRM-U1FLegiBEUAA100UQHOuO3vLvBI3vXwOMMH61PhA&oe=68370799" class="card-img-top portfolio-img" alt="Project 5">
+        <div class="card-body text-center">
+          <h5 class="card-title">My Portfolio</h5>
+          <a href="https://jahidads.github.io/my-portfolio/" class="btn btn-primary" target="_blank">View Project</a>
         </div>
       </div>
-      <div class="col-md-2" data-aos="zoom-in" data-aos-delay="400">
-        <div class="card shadow">
-          <img src="https://scontent.fdac174-1.fna.fbcdn.net/v/t39.30808-6/499925852_122097639218890978_8550758550378172993_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_ohc=8RhKp_EjiOUQ7kNvwEHdI5C&_nc_oc=Adl4hlHMvewebuKR5Do7kHB7S_7CSK7-5O_rKQOcTqYYsy-Owjh8OzWSJpKEEzk0jds&_nc_zt=23&_nc_ht=scontent.fdac174-1.fna&_nc_gid=J-AlVtoRmSwCNfazS2o0dw&oh=00_AfJ45JnvNjTozev2X3Nu1xXNAVcLRl3FSeYNJmSJdhKcCQ&oe=6838D603" class="card-img-top" alt="Project 3">
-          <div class="card-body text-center">
-            <h5 class="card-title">Web Developer</h5>
-            <a href=" https://jahidads.github.io/Web-Developer/" class="btn btn-primary" target="_blank">View Project</a>
-          </div>
+    </div>
+    <div class="col-md-4 col-sm-6 mb-4" data-aos="zoom-in" data-aos-delay="350">
+      <div class="card shadow h-100 border-0 portfolio-card">
+        <img src="https://scontent.fdac174-1.fna.fbcdn.net/v/t39.30808-6/499925852_122097639218890978_8550758550378172993_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_ohc=8RhKp_EjiOUQ7kNvwEHdI5C&_nc_oc=Adl4hlHMvewebuKR5Do7kHB7S_7CSK7-5O_rKQOcTqYYsy-Owjh8OzWSJpKEEzk0jds&_nc_zt=23&_nc_ht=scontent.fdac174-1.fna&_nc_gid=J-AlVtoRmSwCNfazS2o0dw&oh=00_AfJ45JnvNjTozev2X3Nu1xXNAVcLRl3FSeYNJmSJdhKcCQ&oe=6838D603" class="card-img-top portfolio-img" alt="Project 6">
+        <div class="card-body text-center">
+          <h5 class="card-title">Web Developer</h5>
+          <a href=" https://jahidads.github.io/Web-Developer/" class="btn btn-primary" target="_blank">View Project</a>
         </div>
       </div>
-    </div>    
+    </div>
   </div>
+  <style>
+    /* Portfolio Section Styles */
+    #portfolio {
+      background: rgba(255,255,255,0.03);
+      border-radius: 18px;
+      box-shadow: 0 6px 32px rgba(0,0,0,0.07);
+      margin-bottom: 40px;
+    }
+    #portfolio .card {
+      border-radius: 18px;
+      transition: transform 0.25s, box-shadow 0.25s;
+      overflow: hidden;
+      background: rgba(255,255,255,0.13);
+      box-shadow: 0 2px 12px rgba(49,112,175,0.08);
+    }
+    #portfolio .card:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 8px 32px rgba(49,112,175,0.18);
+      border: 2px solid #3170af;
+    }
+    #portfolio .portfolio-img {
+      height: 180px;
+      object-fit: cover;
+      border-top-left-radius: 18px;
+      border-top-right-radius: 18px;
+      transition: filter 0.3s;
+      filter: grayscale(10%);
+    }
+    #portfolio .card:hover .portfolio-img {
+      filter: grayscale(0%) brightness(1.08);
+    }
+    #portfolio .card-title {
+      font-weight: 600;
+      color: #000000;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+    #portfolio .btn-primary {
+      background: linear-gradient(90deg, #3170af 60%, #00d1ff 100%);
+      border: none;
+      border-radius: 20px;
+      font-weight: 500;
+      padding: 8px 24px;
+      transition: background 0.3s, color 0.3s;
+      box-shadow: 0 2px 8px rgba(49,112,175,0.12);
+    }
+    #portfolio .btn-primary:hover {
+      background: linear-gradient(90deg, #00d1ff 60%, #3170af 100%);
+      color: #fff;
+    }
+    @media (max-width: 767px) {
+      #portfolio .portfolio-img {
+        height: 140px;
+      }
+      #portfolio .card-title {
+        font-size: 1rem;
+      }
+    }
+    @media (max-width: 575px) {
+      #portfolio .portfolio-img {
+        height: 110px;
+      }
+      #portfolio .card-title {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
 </section>
 
 <section id="testimonials" class="container py-5">
@@ -250,8 +411,8 @@
     <div class="col-md-4" data-aos="fade-right">
       <div class="card shadow text-center p-3">
         <img src="https://scontent.fdac174-1.fna.fbcdn.net/v/t39.30808-1/277574377_2780637402244787_8171004333417298666_n.jpg?stp=c10.0.940.943a_dst-jpg_s200x200_tt6&_nc_cat=110&ccb=1-7&_nc_sid=1d2534&_nc_ohc=nqS0scFRiWUQ7kNvwFAxveP&_nc_oc=AdnOt071LQILBVHnkaJy8A4rolJCI_FL7YNh_cJjSKa8msltlaivA0wWByDkPClAHdM&_nc_zt=24&_nc_ht=scontent.fdac174-1.fna&_nc_gid=MpgJKykXsVDNHLSDQZygNg&oh=00_AfL4bPWRB270zviZenNhbp5qvs-yosoD7ydsM_m15z-_KQ&oe=6839068F" class="rounded-circle mx-auto" style="width: 100px;" alt="Akash Ahmed image">
-        <p class="mt-3">"Amazing service! Jahid built my dream website perfectly."</p>
-        <h5>Akash Ahmed </h5>
+        <p class="mt-3" style="font-style: italic; color: #555;">"Amazing service! Jahid built my dream website perfectly."</p>
+        <h5 style="font-weight: bold; color: #3170af;">Akash Ahmed</h5>
         <div class="star-rating mt-2">
           <span class="text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
           <small class="text-muted d-block">5.0 ★ (32 Ratings)</small>
@@ -261,8 +422,8 @@
     <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
       <div class="card shadow text-center p-3">
         <img src="https://randomuser.me/api/portraits/women/44.jpg" class="rounded-circle mx-auto" style="width: 100px;" alt="Sarah Lee image">
-        <p class="mt-3">"Very professional and friendly. Highly recommended."</p>
-        <h5>Sarah Lee</h5>
+        <p class="mt-3" style="font-style: italic; color: #555;">"Very professional and friendly. Highly recommended."</p>
+        <h5 style="font-weight: bold; color: #3170af;">Sarah Lee</h5>
         <div class="star-rating mt-2">
           <span class="text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
           <small class="text-muted d-block">5.0 ★ (27 Ratings)</small>
@@ -272,8 +433,8 @@
     <div class="col-md-4" data-aos="fade-left" data-aos-delay="400">
       <div class="card shadow text-center p-3">
         <img src="https://scontent.fdac174-1.fna.fbcdn.net/v/t39.30808-1/494306113_2534612656885964_3171710037323253750_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=105&ccb=1-7&_nc_sid=e99d92&_nc_ohc=G1vJJFL7sLIQ7kNvwGmzZke&_nc_oc=AdmQg9w-rBfLnwNH3yuyxkiOB3ojfmd7vMFre8daF6cdXUY_weBl_nLrMI2GNPQiLiI&_nc_zt=24&_nc_ht=scontent.fdac174-1.fna&_nc_gid=5QGNrDL0rRn7MpLy7DVCwg&oh=00_AfKvm53ttYM6mAvB3zk2YtIXZGlm2u1YeGWBxD2s_in1gA&oe=6838FCF2" class="rounded-circle mx-auto" style="width: 100px;" alt="RasheL HosseN image">
-        <p class="mt-3">"Top-notch design and development skills. Will hire again!"</p>
-        <h5>RasheL HosseN</h5>
+        <p class="mt-3" style="font-style: italic; color: #555;">"Top-notch design and development skills. Will hire again!"</p>
+        <h5 style="font-weight: bold; color: #3170af;">RasheL HosseN</h5>
         <div class="star-rating mt-2">
           <span class="text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
           <small class="text-muted d-block">5.0 ★ (41 Ratings)</small>
@@ -283,8 +444,8 @@
     <div class="col-md-4" data-aos="fade-left" data-aos-delay="400">
       <div class="card shadow text-center p-3">
         <img src="https://scontent.fdac174-1.fna.fbcdn.net/v/t39.30808-6/472265164_122216707160022439_1001905034899659524_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=pUqNkPT7ziEQ7kNvwEikhnl&_nc_oc=AdmfaECCCcoUF6fgkS9UsBSsA3oLE6J0XJIgrvh3aChFjCw6v_b8M5ve7zzyDfGDOyY&_nc_zt=23&_nc_ht=scontent.fdac174-1.fna&_nc_gid=-bmh0KM8O2MNRelIQgeBPg&oh=00_AfI1dzFQjKAGZeKvP0Nie1jfF47rTcwzPA2IQ0hw0DZ_XQ&oe=6838FF90" class="rounded-circle mx-auto" style="width: 100px;" alt="Abdullah Al Kafi image">
-        <p class="mt-3">"Top-notch The system demonstrates a strong commitment to safe, traditional development principles with modern protection."</p>
-        <h5>Abdullah Al Kafi</h5>
+        <p class="mt-3" style="font-style: italic; color: #555;">"Top-notch! The system demonstrates a strong commitment to safe, traditional development principles with modern protection."</p>
+        <h5 style="font-weight: bold; color: #3170af;">Abdullah Al Kafi</h5>
         <div class="star-rating mt-2">
           <span class="text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
           <small class="text-muted d-block">4.0 ★ (123 Ratings)</small>
@@ -294,8 +455,8 @@
     <div class="col-md-4" data-aos="fade-left" data-aos-delay="400">
       <div class="card shadow text-center p-3">
         <img src="https://scontent.fdac174-1.fna.fbcdn.net/v/t39.30808-1/499574416_122223342242168483_8459789123731702524_n.jpg?stp=dst-jpg_s100x100_tt6&_nc_cat=110&ccb=1-7&_nc_sid=e99d92&_nc_ohc=O--BzFDL9fAQ7kNvwGStiFi&_nc_oc=AdltvRqPLlWsnG2rXz2K6n2XohfEMm2cbuo04Np9NEiZAiCayraznWOtL8Pg0IE93BQ&_nc_zt=24&_nc_ht=scontent.fdac174-1.fna&_nc_gid=SmZTlw6Rqf_Huy8Iz7DYIg&oh=00_AfLp_d6-qBfpBlYO955BgyxGUeR-TyghF_eSgWkRJtaW2A&oe=6838FB8A" class="rounded-circle mx-auto" style="width: 100px;" alt="Ishraq Ahmad image">
-        <p class="mt-3">"The project reflects a high level of security hygiene and responsibility."</p>
-        <h5>Ishraq Ahmad</h5>
+        <p class="mt-3" style="font-style: italic; color: #555;">"The project reflects a high level of security hygiene and responsibility."</p>
+        <h5 style="font-weight: bold; color: #3170af;">Ishraq Ahmad</h5>
         <div class="star-rating mt-2">
           <span class="text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
           <small class="text-muted d-block">5.0 ★ (1k Ratings)</small>
@@ -305,11 +466,11 @@
     <div class="col-md-4" data-aos="fade-left" data-aos-delay="400">
       <div class="card shadow text-center p-3">
         <img src="https://scontent.fdac174-1.fna.fbcdn.net/v/t39.30808-1/496007504_660315050315553_4053619360431462561_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=111&ccb=1-7&_nc_sid=1d2534&_nc_ohc=6Zstusvi6RYQ7kNvwETSQ-P&_nc_oc=AdmLZUheMJ0crlOKVCXlpXNV75cfCOe5OIsxwKRYUbEN3aScG53b3rJa7T8AHIWxBVc&_nc_zt=24&_nc_ht=scontent.fdac174-1.fna&_nc_gid=7fa90qjwXIPEl0TjWcqFpg&oh=00_AfKxirMDibaZvXqlhEe6kokMZFFt_UdwDHdZwn6sPUGOBA&oe=6839066F" class="rounded-circle mx-auto" style="width: 100px;" alt="Tanim Rahman image">
-        <p class="mt-3">"All critical attack vectors — including SQL injection, XSS, CSRF, session hijacking, and insecure file handling — are effectively mitigated."</p>
-        <h5>MD Tanim Rahman</h5>
+        <p class="mt-3" style="font-style: italic; color: #555;">"All critical attack vectors — including SQL injection, XSS, CSRF, session hijacking, and insecure file handling — are effectively mitigated."</p>
+        <h5 style="font-weight: bold; color: #3170af;">MD Tanim Rahman</h5>
         <div class="star-rating mt-2">
           <span class="text-warning"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
-          <small class="text-muted d-block">5.0 ★ (75 Ratings)</small>
+            <small class="text-muted d-block" style="font-size: 0.9rem; color: #6c757d; font-style: italic;">5.0 ★ (75 Ratings)</small>
         </div>
       </div>
     </div>
@@ -321,27 +482,139 @@
   <div class="row justify-content-center">
     <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
       <form action="https://formspree.io/f/mayvlqld" method="POST">
-        <div class="mb-3"><input type="text" class="form-control" name="name" placeholder="Your Name" required></div>
-        <div class="mb-3"><input type="email" class="form-control" name="email" placeholder="Your Email" required></div>
-        <div class="mb-3"><textarea class="form-control" name="message" rows="5" placeholder="Your Message" required></textarea></div>
-        <button type="submit" class="btn btn-success w-100">Send Message</button>
+        <div class="mb-3">
+          <input type="text" class="form-control contact-input" name="name" placeholder="Your Name" required>
+        </div>
+        <div class="mb-3">
+          <input type="email" class="form-control contact-input" name="email" placeholder="Your Email" required>
+        </div>
+        <div class="mb-3">
+          <textarea class="form-control contact-input" name="message" rows="5" placeholder="Your Message" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-success w-100 contact-btn">Send Message</button>
       </form>
     </div>
   </div>
   <div class="row justify-content-center mt-4">
     <div class="col-md-8 col-sm-12" data-aos="fade-up" data-aos-delay="300">
-      <div class="ratio ratio-16x9">
+      <div class="ratio ratio-16x9 contact-map">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.3047703417474!2d89.08758447537726!3d25.057657377801064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fc8d007d74c671%3A0x6e27870ee3260c1d!2sjahidads!5e0!3m2!1sen!2sbd!4v1747730439019!5m2!1sen!2sbd" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
   </div>
 </section>
 
-<footer>&copy; 2025 Jahid Hasan | All Rights Reserved<br>
-  <a href="https://github.com/jahidads" target="_blank">
-    <i class="fab fa-github"></i> Follow me on GitHub
+<style>
+  #contact {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 18px;
+    box-shadow: 0 6px 32px rgba(0, 0, 0, 0.07);
+    padding: 40px;
+    margin-bottom: 40px;
+  }
+
+  #contact h2 {
+    color: #020202;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+
+  .contact-input {
+    border: 2px solid #3170af;
+    border-radius: 10px;
+    padding: 10px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+
+  .contact-input:focus {
+    border-color: #00d1ff;
+    box-shadow: 0 0 8px rgba(0, 209, 255, 0.5);
+  }
+
+  .contact-btn {
+    background: linear-gradient(90deg, #3170af 60%, #00d1ff 100%);
+    border: none;
+    border-radius: 20px;
+    font-weight: 500;
+    padding: 10px 24px;
+    transition: background 0.3s, transform 0.3s;
+    box-shadow: 0 2px 8px rgba(49, 112, 175, 0.12);
+  }
+
+  .contact-btn:hover {
+    background: linear-gradient(90deg, #00d1ff 60%, #3170af 100%);
+    transform: scale(1.05);
+  }
+
+  .contact-map iframe {
+    border-radius: 18px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (max-width: 576px) {
+    #contact {
+      padding: 20px;
+    }
+
+    .contact-btn {
+      font-size: 0.9rem;
+    }
+  }
+</style></div>
+
+<footer>
+  &copy; 2025 Jahid Hasan | Web-Developer and Designer<br>
+  <a href="https://github.com/jahidads" target="_blank" class="github-link">
+    <i class="fab fa-github"></i>
+    <button class="btn btn-primary ms-2" onclick="window.open('https://github.com/jahidads', '_blank')">
+      <i class="fas fa-user-plus"></i> Follow Me
+    </button>
   </a>
 </footer>
+<style>
+  footer {
+    background: var(--footer-color);
+    color: #fff;
+    padding: 24px 0 16px 0;
+    text-align: center;
+    font-size: 1.1rem;
+    letter-spacing: 0.2px;
+    border-top: 4px solid #3170af;
+    box-shadow: 0 -2px 16px rgba(49,112,175,0.10);
+    margin-top: 40px;
+    position: relative;
+    z-index: 10;
+  }
+  footer a.github-link {
+    color: #00d1ff;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 8px;
+    display: inline-block;
+    transition: color 0.2s, text-shadow 0.2s;
+    font-size: 1.12em;
+    letter-spacing: 0.5px;
+  }
+  footer a.github-link:hover {
+    color: #ffd700;
+    text-shadow: 0 2px 8px #3170af55;
+  }
+  footer .fa-github {
+    margin-right: 6px;
+    font-size: 1.3em;
+    vertical-align: -2px;
+    transition: color 0.2s;
+  }
+  @media (max-width: 576px) {
+    footer {
+      font-size: 0.97rem;
+      padding: 18px 0 10px 0;
+    }
+    footer a.github-link {
+      font-size: 1em;
+    }
+  }
+</style>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
