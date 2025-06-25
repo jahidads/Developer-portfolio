@@ -183,9 +183,17 @@
   </div>
 </nav>
 
+<!-- Video Loader Overlay -->
+<div id="video-loader" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:9999;background:#121212;display:flex;align-items:center;justify-content:center;flex-direction:column;">
+  <div style="color:#fff;font-size:1.5rem;margin-bottom:20px;">Loading video...</div>
+  <div class="spinner-border text-info" role="status" style="width:3rem;height:3rem;">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+
 <section id="home" class="hero">
-  <video autoplay loop muted playsinline class="background-video">
-    <source src="banner.mp4" type="video/mp4">
+  <video id="main-bg-video" autoplay loop muted playsinline class="background-video">
+    <source src="website.banar.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
   <h1 data-aos="fade-up" style="animation: fadeIn 2s ease-in-out, colorChange 2s infinite, bounce 3s infinite, rotateText 6s infinite;">
@@ -289,6 +297,21 @@
     <a href="https://www.instagram.com/jahidhasan2.0ff/" target="_blank"><i class="fab fa-instagram"></i></a>
   </div>
 </section>
+
+<script>
+  // Video loader logic
+  const video = document.getElementById('main-bg-video');
+  const loader = document.getElementById('video-loader');
+  if (video) {
+    video.addEventListener('canplaythrough', function () {
+      loader.style.display = 'none';
+    });
+    // Fallback: hide loader after 6s if video fails
+    setTimeout(() => { loader.style.display = 'none'; }, 6000);
+  } else {
+    loader.style.display = 'none';
+  }
+</script>
 
 <style>
   .hero {
