@@ -306,8 +306,8 @@
     video.addEventListener('canplaythrough', function () {
       loader.style.display = 'none';
     });
-    // Fallback: hide loader after 6s if video fails
-    setTimeout(() => { loader.style.display = 'none'; }, 6000);
+    // Fallback: hide loader after 1s if video fails
+    setTimeout(() => { loader.style.display = 'none'; }, 1000);
   } else {
     loader.style.display = 'none';
   }
