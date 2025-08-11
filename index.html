@@ -164,8 +164,8 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
   <div class="container">
-    <a class="navbar-brand" href="#">
-    <img src="https://jahidads.netlify.app/image/495563656_122107947614855440_1152109947886773901_n.jpg" alt="Logo" style="height: 50px; margin-right: 10px; border-radius: 50%;">
+    <a class="navbar-brand" href="#home">
+    <img src="https://cdn.pixabay.com/animation/2022/12/05/10/47/10-47-58-930_512.gif" alt="Logo" style="height: 35px; margin-right: 10px; border-radius: 50%;">
       Jahid Hasan
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -180,6 +180,15 @@
           <rect x="6" y="10" width="12" height="10" rx="2" stroke="#00d1ff" stroke-width="2"/>
         </svg>
         Home
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;margin-right:4px;" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2C10.3431 2 9 3.34315 9 5V19C9 20.6569 10.3431 22 12 22C13.6569 22 15 20.6569 15 19V5C15 3.34315 13.6569 2 12 2Z" fill="#ffd700"/>
+              <path d="M4 6H20C21.1046 6 22 6.89543 22 8V16C22 17.1046 21.1046 18 20 18H4C2.89543 18 2 17.1046 2 16V8C2 6.89543 2.89543 6 4 6Z" fill="#00d1ff"/>
+            </svg>
+            About
           </a>
         </li>
         <li class="nav-item">
@@ -215,19 +224,11 @@
   </div>
 </nav>
 
-<!-- Video Loader Overlay -->
-<div id="video-loader" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:9999;background:#121212;display:flex;align-items:center;justify-content:center;flex-direction:column;">
-  <div style="color:#fff;font-size:1.5rem;margin-bottom:20px;">Loading video...</div>
-  <div class="spinner-border text-info" role="status" style="width:3rem;height:3rem;">
-    <span class="visually-hidden">Loading...</span>
-  </div>
-</div>
-
 <section id="home" class="hero">
-  <video id="main-bg-video" autoplay loop muted playsinline class="background-video">
+<video id="main-bg-video" autoplay loop muted playsinline class="background-video" preload="auto" poster="https://images.unsplash.com/photo-1532619675605-1a4503a08c6b?auto=format&fit=crop&w=1350&q=80">
     <source src="website.banar.mp4" type="video/mp4">
     Your browser does not support the video tag.
-  </video>
+</video>
   <h1 data-aos="fade-up" style="animation: fadeIn 2s ease-in-out, colorChange 2s infinite, bounce 3s infinite, rotateText 6s infinite;">
     I'm Jahid Hasan
   </h1>
@@ -324,26 +325,11 @@
   </style>
 
   <div class="social-icons mt-3" data-aos="fade-up" data-aos-delay="500" style="animation: pulse 3s infinite;">
-    <a href="https://www.facebook.com/profile.php?id=61575663205505" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.facebook.com/jahidads1" target="_blank"><i class="fab fa-facebook"></i></a>
     <a href="https://x.com/jahidhasan_tw" target="_blank"><i class="fab fa-twitter"></i></a>
     <a href="https://www.instagram.com/jahidhasan2.0ff/" target="_blank"><i class="fab fa-instagram"></i></a>
   </div>
 </section>
-
-<script>
-  // Video loader logic
-  const video = document.getElementById('main-bg-video');
-  const loader = document.getElementById('video-loader');
-  if (video) {
-    video.addEventListener('canplaythrough', function () {
-      loader.style.display = 'none';
-    });
-    // Fallback: hide loader after 1s if video fails
-    setTimeout(() => { loader.style.display = 'none'; }, 1000);
-  } else {
-    loader.style.display = 'none';
-  }
-</script>
 
 <style>
   .hero {
@@ -426,6 +412,126 @@
   }
 </style>
 
+<section id="about" class="container py-5">
+  <h2 class="text-center mb-5" data-aos="fade-up" style="color: #ffffff;">About Me</h2>
+  <div class="row justify-content-center mb-4">
+    <div class="col-md-8 text-center">
+      <img src="profile.jpg" alt="Jahid Hasan" class="rounded-circle img-fluid shadow" style="width: 160px; height: 160px; object-fit: cover; border: 4px solid #00d1ff;">
+      <p style="font-size: 1.2rem; line-height: 1.6; color: #ffffff;">
+        I am a dedicated web developer with a passion for creating innovative and user-friendly web applications. My expertise lies in HTML, CSS, JavaScript, and various frameworks, allowing me to build responsive and visually appealing websites that enhance user experience.
+      </p>
+    </div>
+  </div>
+  <div class="row align-items-center">
+    <div class="col-md-6" data-aos="fade-right">
+      <div class="about-box p-4 mb-4">
+        <p style="font-size: 1.1rem; line-height: 1.7;">
+          Hello! I'm <span class="about-highlight">Jahid Hasan</span>, a passionate web developer with a keen eye for design and a love for creating beautiful, functional websites. With expertise in <span class="about-skill">HTML</span>, <span class="about-skill">CSS</span>, <span class="about-skill">JavaScript</span>, and various frameworks, I strive to build user-friendly and responsive web applications that meet the needs of my clients.
+        </p>
+      </div>
+    </div>
+    <div class="col-md-6" data-aos="fade-left">
+      <div class="about-box p-4 mb-4">
+        <p style="font-size: 1.1rem; line-height: 1.7;">
+          My journey in web development began with a fascination for technology and design. Over the years, I've honed my skills through various projects, always aiming to deliver high-quality work that exceeds expectations. Whether it's a simple landing page or a complex web application, I approach each project with dedication and creativity.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center mt-4">
+    <div class="col-auto">
+      <a href="https://github.com/jahidads/Developer-portfolio" class="btn btn-primary about-btn" data-aos="fade-up">
+        <i class="fas fa-briefcase me-2"></i>View My Work
+      </a>
+    </div>
+  </div>
+  <style>
+    #about {
+      background: var(--bg-color);
+      color: var(--text-color);
+      border-radius: 18px;
+      box-shadow: 0 6px 32px rgba(49,112,175,0.07);
+      margin-bottom: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    #about h2 {
+      color: #3170af;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 8px #00d1ff11;
+    }
+    .about-box {
+      background: rgba(255,255,255,0.13);
+      border-radius: 14px;
+      box-shadow: 0 2px 12px rgba(49,112,175,0.06);
+      border-left: 5px solid #3170af;
+      transition: box-shadow 0.3s, border-color 0.3s;
+    }
+    .about-box:hover {
+      box-shadow: 0 8px 32px rgba(49,112,175,0.14);
+      border-left: 5px solid #00d1ff;
+    }
+    .about-highlight {
+      color: #00d1ff;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      background: linear-gradient(90deg, #ffd700 40%, #00d1ff 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .about-skill {
+      color: #ffd700;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      padding: 2px 6px;
+      border-radius: 6px;
+      background: rgba(49,112,175,0.09);
+      margin: 0 2px;
+      font-size: 1em;
+      transition: background 0.2s;
+    }
+    .about-skill:hover {
+      background: #00d1ff;
+      color: #fff;
+    }
+    .about-btn {
+      background: linear-gradient(90deg, #225b94 60%, #08819c 100%);
+      border: none;
+      border-radius: 20px;
+      font-weight: 600;
+      padding: 10px 28px;
+      font-size: 1.08rem;
+      box-shadow: 0 2px 8px rgba(49,112,175,0.12);
+      transition: background 0.3s, transform 0.3s;
+      letter-spacing: 0.5px;
+    }
+    .about-btn:hover {
+      background: linear-gradient(90deg, #275c68 60%, #2e475f 100%);
+      color: #fff;
+      transform: scale(1.06);
+    }
+    @media (max-width: 767px) {
+      .about-box {
+        padding: 1.2rem;
+      }
+      #about h2 {
+        font-size: 1.5rem;
+      }
+    }
+    @media (max-width: 575px) {
+      #about {
+        padding: 18px 6px;
+      }
+      .about-btn {
+        font-size: 0.97rem;
+        padding: 8px 18px;
+      }
+    }
+  </style>
+</section>
+
 <section id="portfolio" class="container py-5">
   <h2 class="text-center mb-5" data-aos="fade-up">My Projects</h2>
   <div class="row g-4 justify-content-center">
@@ -442,8 +548,8 @@
       <div class="card shadow h-100 border-0 portfolio-card">
         <img src="ai-generated-ninja-art-illustrations-for-stickers-logo-tshirt-design-poster-etc-png (1).webp" class="card-img-top portfolio-img" alt="Project 2">
         <div class="card-body text-center">
-          <h5 class="card-title">Developer Portfolio</h5>
-          <a href="#" class="btn btn-primary" target="_blank">View Project</a>
+          <h5 class="card-title">Portfolio</h5>
+          <a href="https://jahidads.github.io/Portfolio/" class="btn btn-primary" target="_blank">View Project</a>
         </div>
       </div>
     </div>
@@ -653,10 +759,10 @@
 </section>
 
 <section id="contact" class="container py-5">
-  <h2 class="text-center mb-5" data-aos="fade-up">Contact Me</h2>
+  <h2 class="text-center mb-5" data-aos="fade-up" style="color: #ffffff;">Contact Me</h2>
   <div class="row justify-content-center">
     <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-      <form action="https://formspree.io/f/mayvlqld" method="POST">
+      <form id="contactForm" action="https://formspree.io/f/mayvlqld" method="POST" target="hidden_iframe">
         <div class="mb-3">
           <input type="text" class="form-control contact-input" name="name" placeholder="Your Name" required>
         </div>
@@ -668,6 +774,10 @@
         </div>
         <button type="submit" class="btn btn-success w-100 contact-btn">Send Message</button>
       </form>
+      <div id="contactSuccess" class="alert alert-success mt-3 text-center" style="display:none;">
+        Your message submitted successfully!
+      </div>
+      <iframe name="hidden_iframe" style="display:none;"></iframe>
     </div>
   </div>
   <div class="row justify-content-center mt-4">
@@ -677,6 +787,15 @@
       </div>
     </div>
   </div>
+  <script>
+    // Show success message after form submission
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      setTimeout(function () {
+        document.getElementById('contactSuccess').style.display = 'block';
+        document.getElementById('contactForm').reset();
+      }, 500);
+    });
+  </script>
 </section>
 
 <style>
