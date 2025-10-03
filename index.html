@@ -3,8 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--
+    Mobile layout fixes added:
+    - global box-sizing and reset margins
+    - overflow-x:hidden on html/body to prevent right-side gap on some mobile/zoom states
+    - increased .navbar-toggler z-index so the mobile menu button stays visible above hero overlays
+  -->
   <title>Jahid Hasan | Developer Portfolio</title>
   <link rel="icon" href="https://jahidads.netlify.app/image/495563656_122107947614855440_1152109947886773901_n.jpg" type="image/png">
+    <meta name="description" content="Jahid Hasan - Web Developer Portfolio. Showcasing projects, skills, and testimonials. Contact for web development services.">
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -14,6 +21,11 @@
 
   <!-- AOS CSS -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="styles.css" rel="stylesheet">
+
 
   <style>
     :root {
@@ -21,6 +33,14 @@
       --text-color: #000000;
       --nav-color: #1c534a;
       --footer-color: #002244;
+    }
+    /* Global reset to avoid unexpected overflow on mobile */
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      overflow-x: hidden; /* prevent right-side gap on small/zoomed viewports */
     }
     body.dark-mode {
       --bg-color: #121212;
@@ -83,6 +103,10 @@
     .toggle-btn:hover {
       background: white;
       color: #000;
+    }
+    /* Ensure the mobile navbar toggler sits above hero overlays/video */
+    .navbar-toggler {
+      z-index: 1051; /* above .hero (z-index:1) and Bootstrap modals */
     }
     footer {
       background: var(--footer-color);
@@ -225,8 +249,8 @@
 </nav>
 
 <section id="home" class="hero">
-<video id="main-bg-video" autoplay loop muted playsinline class="background-video" preload="auto" poster="https://images.unsplash.com/photo-1532619675605-1a4503a08c6b?auto=format&fit=crop&w=1350&q=80">
-    <source src="website.banar.mp4" type="video/mp4">
+<video id="main-bg-video" autoplay loop muted playsinline class="background-video" preload="auto">
+    <source src="https://cdn.pixabay.com/video/2025/06/26/287987_tiny.mp4" type="video/mp4">
     Your browser does not support the video tag.
 </video>
   <h1 data-aos="fade-up" style="animation: fadeIn 2s ease-in-out, colorChange 2s infinite, bounce 3s infinite, rotateText 6s infinite;">
@@ -235,99 +259,10 @@
   <p data-aos="fade-up" data-aos-delay="300" style="animation: slideUp 2s ease-in-out, colorChange 2s infinite, pulse 3s infinite, textGlow 4s infinite;">
     Web Developer | Designer | Dreamer
   </p>
-
-  <style>
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-      }
-      40% {
-        transform: translateY(-20px);
-      }
-      60% {
-        transform: translateY(-10px);
-      }
-    }
-
-    @keyframes pulse {
-      0% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.05);
-      }
-      100% {
-        transform: scale(1);
-      }
-    }
-
-    @keyframes colorChange {
-      0% {
-        color: #ffd700;
-      }
-      25% {
-        color: #00d1ff;
-      }
-      50% {
-        color: #3170af;
-      }
-      75% {
-        color: #ff5733;
-      }
-      100% {
-        color: #ffd700;
-      }
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-
-    @keyframes slideUp {
-      from {
-        transform: translateY(20px);
-        opacity: 0;
-      }
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
-
-    @keyframes rotateText {
-      0% {
-        transform: rotate(0deg);
-      }
-      50% {
-        transform: rotate(10deg);
-      }
-      100% {
-        transform: rotate(0deg);
-      }
-    }
-
-    @keyframes textGlow {
-      0% {
-        text-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700, 0 0 20px #ffd700;
-      }
-      50% {
-        text-shadow: 0 0 10px #00d1ff, 0 0 20px #00d1ff, 0 0 30px #00d1ff;
-      }
-      100% {
-        text-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700, 0 0 20px #ffd700;
-      }
-    }
-  </style>
-
   <div class="social-icons mt-3" data-aos="fade-up" data-aos-delay="500" style="animation: pulse 3s infinite;">
     <a href="https://www.facebook.com/jahidads1" target="_blank"><i class="fab fa-facebook"></i></a>
-    <a href="https://x.com/jahidhasan_tw" target="_blank"><i class="fab fa-twitter"></i></a>
-    <a href="https://www.instagram.com/jahidhasan2.0ff/" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://bd.linkedin.com/in/jahidads" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://www.instagram.com/jahidads" target="_blank"><i class="fab fa-instagram"></i></a>
   </div>
 </section>
 
@@ -854,7 +789,7 @@
       font-size: 0.9rem;
     }
   }
-</style></div>
+</style>
 
 <footer>
   &copy; 2025 Jahid Hasan | Web-Developer and Designer<br>
